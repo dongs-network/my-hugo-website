@@ -23,17 +23,17 @@ replyByEmail = false
 disableImageOptimization = false
 disableImageOptimizationMD = false
 disableTextInHeader = false
-# backgroundImageWidth = 1200
+backgroundImageWidth = 1200
 
-# defaultBackgroundImage = "IMAGE.jpg" # used as default for background images
-# defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
+defaultBackgroundImage = "img/structure.jpg" # used as default for background images
+defaultFeaturedImage = "img/frames.jpg" # used as default for featured images in all articles
 # defaultSocialImage = "/android-chrome-512x512.png" # used as default for social media sharing (Open Graph and Twitter)
 hotlinkFeatureImage = false
 # Thumbnail aspect ratio as a number (e.g., "1.5", "1.0", "1.777")
 # thumbnailAspectRatio = "1.5"
 # imagePosition = "50% 50%"
 
-# highlightCurrentMenuArea = true
+highlightCurrentMenuArea = true
 # smartTOC = true
 # smartTOCHideUnfocusedChildren = true
 
@@ -46,7 +46,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 # metaDescriptionOrder = ["summary", "description", "site"] # Controls the fallback order for the HTML meta description. Valid values are "summary", "description", and "site".
 
 [header]
-  layout = "basic" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
+  layout = "fixed" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
 
 [footer]
   showMenu = true
@@ -56,13 +56,13 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showScrollToTop = true
 
 [homepage]
-  layout = "profile" # valid options: page, profile, hero, card, background, custom
-  #homepageImage = "IMAGE.jpg" # used in: hero, and card
+  layout = "background" # valid options: page, profile, hero, card, background, custom
+  homepageImage = "img/structure.jpg" # used in: hero, and card
   showRecent = false
   showRecentItems = 5
   showMoreLink = false
   showMoreLinkDest = "/posts/"
-  cardView = false
+  cardView = true
   cardViewScreenWidth = false
   layoutBackgroundBlur = false # only used when layout equals background
   disableHeroImageFilter = false # only used when layout equals hero
@@ -74,9 +74,9 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showDateOnlyInArticle = false
   showDateUpdated = false
   showAuthor = true
-  # showAuthorBottom = false
-  showHero = false
-  # heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
+  showAuthorBottom = true
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
@@ -90,8 +90,8 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   invertPagination = false
   showReadingTime = true
   showTableOfContents = false
-  # showRelatedContent = false
-  # relatedContentLimit = 3
+  showRelatedContent = false
+  relatedContentLimit = 3
   showTaxonomies = false # Enable the display of taxonomies for the related article.
   showCategories = true # These will show if showTaxonomies is true.
   showTags = true # These will show if showTaxonomies is true.
@@ -104,7 +104,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 
 [list]
   showHero = false
-  # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
@@ -114,8 +114,8 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showTableOfContents = false
   showCards = false
   orderByWeight = false
-  groupByYear = true
-  cardView = false
+  groupByYear = false
+  cardView = true
   cardViewScreenWidth = false
   constrainItemsWidth = false
 
