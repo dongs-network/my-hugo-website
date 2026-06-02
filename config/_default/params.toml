@@ -25,7 +25,7 @@ disableImageOptimizationMD = false
 disableTextInHeader = false
 backgroundImageWidth = 1200
 
-defaultBackgroundImage = "img/structure.jpg" # used as default for background images
+defaultBackgroundImage = "img/greyleaf.jpg" # used as default for background images
 defaultFeaturedImage = "img/frames.jpg" # used as default for featured images in all articles
 # defaultSocialImage = "/android-chrome-512x512.png" # used as default for social media sharing (Open Graph and Twitter)
 hotlinkFeatureImage = false
@@ -57,14 +57,14 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 
 [homepage]
   layout = "background" # valid options: page, profile, hero, card, background, custom
-  homepageImage = "img/structure.jpg" # used in: hero, and card
+  homepageImage = "img/leaves.jpg" # used in: hero, and card
   showRecent = false
   showRecentItems = 5
   showMoreLink = false
   showMoreLinkDest = "/posts/"
   cardView = true
   cardViewScreenWidth = false
-  layoutBackgroundBlur = false # only used when layout equals background
+  layoutBackgroundBlur = true # only used when layout equals background
   disableHeroImageFilter = false # only used when layout equals hero
 
 [article]
@@ -93,7 +93,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showRelatedContent = false
   relatedContentLimit = 3
   showTaxonomies = false # Enable the display of taxonomies for the related article.
-  showCategories = true # These will show if showTaxonomies is true.
+  showCategories = false # These will show if showTaxonomies is true.
   showTags = true # These will show if showTaxonomies is true.
   showCategoriesInSecondaryColor = false # This will change the color of category badges, so the user can better distinguish between the two. Only if showTaxonomies is true.
   showAuthorsBadges = false
