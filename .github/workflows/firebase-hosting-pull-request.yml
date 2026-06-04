@@ -55,7 +55,8 @@ jobs:
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_BLOWFISH_TUTORIAL }}"
+          # firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_BLOWFISH_TUTORIAL }}"
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HUGOFIRE_C1231 }}
           expires: 30d
           channelId: preview-${{ github.event.number }}
           projectId: hugofire-c1231
