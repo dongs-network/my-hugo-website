@@ -22,44 +22,44 @@
 # https://github.com/firebase/firebase-tools
 
 # name: Deploy to Firebase Hosting on merge
-# "on":
+
+# on:
 #   push:
 #     branches:
 #       - main
+
+# env:
+#   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 # jobs:
 #   build_and_deploy:
 #     runs-on: ubuntu-latest
+
 #     steps:
+#       - name: Check out code
+#         uses: actions/checkout@v4
+#         with:
+#           submodules: true
+#           fetch-depth: 0
+
 #       - name: Hugo setup
 #         uses: peaceiris/actions-hugo@v2.6.0
 #         with:
-#           # hugo-version: 0.115.4
 #           hugo-version: 0.162.1
 #           extended: true
-#         env:
-#           ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
-
-#       - name: Check out code into the Go module directory
-#         uses: actions/checkout@v4
-#         with:
-#           submodules: true # Fetch Hugo themes (true OR recursive)
-#           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
 #       - name: Build with Hugo
 #         env:
-#           # For maximum backward compatibility with Hugo modules
 #           HUGO_ENVIRONMENT: production
 #           HUGO_ENV: production
 #         run: hugo -E -F --minify -d public
 
-#       - name: Deploy Production
-#         uses: FirebaseExtended/action-hosting-deploy@v0
+#       - name: Deploy to Firebase Hosting
+#         uses: w9jds/firebase-action@v2.2.0
 #         with:
-#           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-#           # firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_BLOWFISH_TUTORIAL }}"
-#           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HUGOFIRE_C1231 }}
-#           channelId: live
-#           projectId: hugofire-c1231
+#           args: deploy --only hosting
+#         env:
+#           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
 name: Deploy to Firebase Hosting on merge
 
@@ -85,8 +85,20 @@ jobs:
       - name: Hugo setup
         uses: peaceiris/actions-hugo@v2.6.0
         with:
-          hugo-version: 0.162.1
+          hugo-version: "0.162.1"
           extended: true
+
+      # ADDED THIS — Clear old Blowfish/Hugo module cache
+      - name: Clear Hugo module cache
+        run: hugo mod clean
+
+      # ADDED THIS — Force update Blowfish theme + modules
+      - name: Update Hugo modules
+        run: hugo mod get -u
+
+      # (Optional but recommended)
+      - name: Check Hugo version
+        run: hugo version
 
       - name: Build with Hugo
         env:
