@@ -87,11 +87,11 @@ jobs:
           hugo-version: "0.162.1"
           extended: true
 
-      # ✅ Add this — clear old Blowfish/Hugo module cache
+      # Added this — clear old Blowfish/Hugo module cache
       - name: Clear Hugo module cache
         run: hugo mod clean
 
-      # ✅ Add this — force update Blowfish + modules
+      # Added this — force update Blowfish + modules
       - name: Update Hugo modules
         run: hugo mod get -u
 
