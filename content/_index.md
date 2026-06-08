@@ -1,7 +1,5 @@
 ---
-title: "Home Landing Page"
-
-
+title: "Home Page"
 
 ---
 
