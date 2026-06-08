@@ -52,10 +52,10 @@ jobs:
           path: ./public
 
   deploy:
-  needs: build-and-deploy
-  runs-on: ubuntu-latest
-  environment:
-    name: github-pages
-  steps:
-    - name: Deploy to GitHub Pages
-      uses: actions/deploy-pages@v5
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v5
